@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>Name:</strong>
+	<%= @employee.name %>
+</p>
+<h2>Employee Cover Images</h2>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>
+
+<% @employee.pictures.each do |picture| %>
+  <% if picture.name_url.present? %>
+	  <%= image_tag picture.name_url, width:"150", height:"150" %>
+	<% end %>
+<% end %>	

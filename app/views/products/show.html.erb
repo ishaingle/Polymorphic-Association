@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<h2>Product Cover Images</h2>
+<% @product.pictures.each do |picture| %>
+    <% if picture.name_url.present? %>
+       <%= image_tag picture.name_url, width:"150", height:"150" %>
+    <% end %>   
+<% end %>   
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
